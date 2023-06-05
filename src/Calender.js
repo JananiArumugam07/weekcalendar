@@ -7,7 +7,7 @@ class Calendar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      startDate: "2022-02-02",
+      startDate: "2022-01-02",
       viewType: "Week",
       cellHeight: 30,
       timeRangeSelectedHandling: "Enabled",
@@ -36,11 +36,13 @@ class Calendar extends Component {
       },
       onBeforeEventDomAdd: args => {
         args.element = <div>
-          <div style={{position: "absolute", right: "25px", top: "5px", height: "17px", width: "17px", border: 'none'}}
+          <div style={{position: "absolute", left: "15px", top: "5px", height: "3px", width: "7px"}}
               >
                 {/* <input type='checkbox' value='Available'/> */}
-                <Checkbox>Available</Checkbox>
-            
+                <center>
+                   <Checkbox/>
+                   <label style={{width: "3px",top: "8px", left:"35px", position:"absolute"}}>Available</label>
+                </center>
           </div>
         </div>;
       }
@@ -58,20 +60,28 @@ class Calendar extends Component {
       events: [
         {
           id: 1,
-          text: "Event 1",
-          start: "2022-02-01T09:00:00",
-          end: "2022-02-01T14:00:00",
+          text: "eve 1",
+          start: "2022-01-03T09:00:00",
+          end : "2022-01-03T09:30:00"
+        //  start: /^\d{4}-\d{2}-\d{2}T\d{2}:00:00$/,
+          // end: /^\d{4}-\d{2}-\d{2}T\d{2}:30:00$/
         },
+
+
         {
           id: 2,
-          text: "Event 2",
-          start: "2022-02-02T10:00:00",
-          end: "2022-02-02T15:00:00",
+          text: "Event 1",
+          start: "2022-01-05T09:00:00",
+          end : "2022-01-05T09:30:00"
+          // start: /^\d{4}-\d{2}-\d{2}T\d{2}:00:00$/,
+          // end: /^\d{4}-\d{2}-\d{2}T\d{2}:30:00$/
         }
       ]
     });
 
   }
+
+
 
   render() {
     return (
